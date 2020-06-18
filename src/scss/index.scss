@@ -1,0 +1,22 @@
+$main-bg: #f00;
+
+body {
+  box-sizing: border-box;
+  background: $main-bg;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  background: yellow;
+  border: 5px solid #fff;
+  width: 200px;
+  height: 200px;
+}
+
+.item + .item {
+  margin-left: 10px;
+}
