@@ -1,22 +1,28 @@
-$main-bg: #f00;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '~normalize.css';
+
+@import 'header';
+@import 'toolbar';
+@import 'formula';
+@import 'table';
+@import "dashboard";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  box-sizing: border-box;
-  background: $main-bg;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
-#app {
-  display: flex;
-  justify-content: center;
-}
+.excel{
+  position: relative;
+  color: #888;
+  height: 100%;
+  max-width: 100%;
+  font-size: .8rem;
 
-.item {
-  background: yellow;
-  border: 5px solid #fff;
-  width: 200px;
-  height: 200px;
-}
-
-.item + .item {
-  margin-left: 10px;
 }

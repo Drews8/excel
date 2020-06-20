@@ -20,7 +20,7 @@ const jsLoaders = () => {
     },
   ]
 
-  if (isDev) loaders.unshift('eslint-loader')
+  if (isDev) loaders.push('eslint-loader')
 
   return loaders
 }
@@ -32,7 +32,7 @@ module.exports = {
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
-  },// output folder
+  }, // output folder
   resolve: {
     extensions: ['.js'],
     alias: {// short paths
@@ -46,6 +46,7 @@ module.exports = {
     hot: isDev,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: 'index.html',
       minify: {
@@ -61,7 +62,6 @@ module.exports = {
         },
       ],
     }),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
