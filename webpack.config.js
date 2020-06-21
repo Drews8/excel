@@ -16,6 +16,7 @@ const jsLoaders = () => {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
       },
     },
   ]
@@ -26,8 +27,8 @@ const jsLoaders = () => {
 }
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),// source files path
-  mode: 'development',// default project mode
+  context: path.resolve(__dirname, 'src'), // source file path
+  mode: 'development', // default project mode
   entry: ['@babel/polyfill', './index.js'],
   output: {
     filename: filename('js'),
@@ -35,7 +36,7 @@ module.exports = {
   }, // output folder
   resolve: {
     extensions: ['.js'],
-    alias: {// short paths
+    alias: {
       '@': path.resolve(__dirname, 'src'),
       '@core': path.resolve(__dirname, 'src/core'),
     },
